@@ -1,0 +1,38 @@
+{
+  "name": "eslint-plugin-react-i18next",
+  "version": "1.0.0",
+  "description": "ESLint rules for enforcing best practices with react-i18n",
+  "keywords": [
+    "eslint",
+    "eslint-plugin",
+    "react",
+    "i18n",
+    "react-i18next",
+    "i18next",
+    "react-i18next"
+  ],
+  "author": "Amir Ali",
+  "main": "lib/index.js",
+  "scripts": {
+    "lint": "eslint lib/** tests/**",
+    "lint:fix": "npm run lint -- --fix",
+    "test": "mocha tests --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amir-deriv/eslint-plugin-react-i18next"
+  },
+  "homepage": "https://github.com/amir-deriv/eslint-plugin-react-i18next",
+  "peerDependencies": {
+    "eslint": "^8"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.6",
+    "eslint": "^8.6.0",
+    "mocha": "^5.2.0"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "license": "MIT"
+}
