@@ -1,6 +1,6 @@
 # eslint-plugin-react-i18next
 
-ESLint rules to help enforce i18n in react.
+Eslint rules for enforcing the correct usage of `localize` function and `Localize` component in the app
 
 ## Installation
 
