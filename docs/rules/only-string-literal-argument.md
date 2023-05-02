@@ -1,4 +1,4 @@
-# Enforce using static strings as keys for translation functions (only-string-literal-argument)
+# Enforce using static strings as keys for localize functions which we use for translation (only-string-literal-argument)
 
 ## Rule Details
 
