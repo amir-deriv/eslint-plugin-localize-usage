@@ -48,5 +48,4 @@ You can also use the recommended config instead
 
 ## Supported Rules
 
-- [react-i18next/no-dynamic-translation-keys](docs/rules/no-dynamic-translation-keys.md): Enforce using static strings as keys for translation functions
-- [react-i18next/no-missing-interpolation-keys](docs/rules/no-missing-interpolation-keys.md): Enforce passing all defined interpolation keys to translation functions
+- [react-i18next/only-string-literal-argument](docs/rules/only-string-literal-argument.md): Enforce using static strings as keys for localize functions which we use for translation
