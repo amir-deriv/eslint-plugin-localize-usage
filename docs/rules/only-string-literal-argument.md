@@ -15,7 +15,7 @@ Examples of **correct** code for this rule:
 ```js
 localize("key");
 
-t(`key`);
+localize(`key`);
 ```
 
 ### Options
