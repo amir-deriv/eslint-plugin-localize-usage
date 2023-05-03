@@ -1,7 +1,5 @@
 # only-string-literal-argument
 
-## Description
-
 Enforce using static strings as keys for localize functions which we use for translation
 
 ## Rule Details

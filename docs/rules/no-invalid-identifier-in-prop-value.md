@@ -1,7 +1,5 @@
 # no-invalid-identifier-in-prop-value
 
-## Description
-
 Validate string literal passed to Localize component in i18n_default_text prop is valid and has all the identifiers in values prop
 
 ## Rule Details
