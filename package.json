@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-localize-usage",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "ESLint rules for enforcing best the usage of localize function and component",
   "keywords": [
     "eslint",
@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/amir-deriv/eslint-plugin-localize-usage",
   "peerDependencies": {
-    "eslint": "^6 | ^7 | ^8"
+    "eslint": ">= 6"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.6",
