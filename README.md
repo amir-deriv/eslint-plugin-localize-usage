@@ -20,11 +20,11 @@ $ npm install eslint-plugin-localize-usage --save-dev
 
 ## Usage
 
-Add `react-i18next` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
+Add `localize-usage` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
 
 ```json
 {
-  "plugins": ["react-i18next"]
+  "plugins": ["localize-usage"]
 }
 ```
 
@@ -33,7 +33,7 @@ Then configure the rules you want to use under the rules section.
 ```json
 {
   "rules": {
-    "react-i18next/rule-name": "error"
+    "localize-usage/rule-name": "error"
   }
 }
 ```
@@ -42,11 +42,11 @@ You can also use the recommended config instead
 
 ```json
 {
-  "extends": ["plugin:react-i18next/recommended"]
+  "extends": ["plugin:localize-usage/recommended"]
 }
 ```
 
 ## Supported Rules
 
-- [react-i18next/only-string-literal-argument](docs/rules/only-string-literal-argument.md): Enforce using static strings as keys for localize functions which we use for translation
-- [react-i18next/no-invalid-identifier-in-prop-value](docs/rules/no-invalid-identifier-in-prop-value.md):  Validate string literal passed to Localize component in i18n_default_text prop is valid and has all the identifiers in values prop 
+- [localize-usage/only-string-literal-argument](docs/rules/only-string-literal-argument.md): Enforce using static strings as keys for localize functions which we use for translation
+- [localize-usage/no-invalid-identifier-in-prop-value](docs/rules/no-invalid-identifier-in-prop-value.md):  Validate string literal passed to Localize component in i18n_default_text prop is valid and has all the identifiers in values prop 
