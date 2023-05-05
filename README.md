@@ -1,4 +1,4 @@
-# eslint-plugin-react-i18next
+# eslint-plugin-localize-usage
 
 Eslint rules for enforcing the correct usage of `localize` function and `Localize` component in the app
 
@@ -10,13 +10,13 @@ You'll first need to install [ESLint](http://eslint.org):
 $ npm i eslint --save-dev
 ```
 
-Next, install `eslint-plugin-react-i18next`:
+Next, install `eslint-plugin-localize-usage`:
 
 ```
-$ npm install eslint-plugin-react-i18next --save-dev
+$ npm install eslint-plugin-localize-usage --save-dev
 ```
 
-**Note:** If you installed ESLint globally (using the `-g` flag) then you must also install `eslint-plugin-react-i18next` globally.
+**Note:** If you installed ESLint globally (using the `-g` flag) then you must also install `eslint-plugin-localize-usage` globally.
 
 ## Usage
 

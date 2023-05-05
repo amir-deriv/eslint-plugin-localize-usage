@@ -1,30 +1,26 @@
 {
-  "name": "eslint-plugin-react-i18next",
+  "name": "eslint-plugin-localize-usage",
   "version": "1.0.0",
-  "description": "ESLint rules for enforcing best practices with react-i18n",
+  "description": "ESLint rules for enforcing best the usage of localize function and component",
   "keywords": [
     "eslint",
     "eslint-plugin",
     "react",
-    "i18n",
-    "react-i18next",
-    "i18next",
-    "react-i18next"
+    "localize"
   ],
   "author": "Amir Ali",
   "main": "lib/index.js",
   "scripts": {
-    "lint": "eslint lib/** tests/**",
     "lint:fix": "npm run lint -- --fix",
     "test": "mocha tests --recursive"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/amir-deriv/eslint-plugin-react-i18next"
+    "url": "https://github.com/amir-deriv/eslint-plugin-localize-usage"
   },
-  "homepage": "https://github.com/amir-deriv/eslint-plugin-react-i18next",
+  "homepage": "https://github.com/amir-deriv/eslint-plugin-localize-usage",
   "peerDependencies": {
-    "eslint": "^8"
+    "eslint": "^6 | ^7 | ^8"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.6",
