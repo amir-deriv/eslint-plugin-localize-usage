@@ -31,7 +31,40 @@ ruleTester.run("only-string-literal-argument", rule, {
         {
           message: ERROR_MESSAGE,
           line: 1,
-          column: 1,
+          column: 25,
+          type: "Identifier"
+        }
+      ]
+    },
+    {
+      code: "localize('invalid use' + some_variable)",
+      errors: [
+        {
+          message: ERROR_MESSAGE,
+          line: 1,
+          column: 26,
+          type: "Identifier"
+        }
+      ]
+    },
+    {
+      code: "localize(some_new_variable + 'invalid use')",
+      errors: [
+        {
+          message: ERROR_MESSAGE,
+          line: 1,
+          column: 10,
+          type: "Identifier"
+        }
+      ]
+    },
+    {
+      code: "localize(some_new_variable + 'invalid use' + some_variable)",
+      errors: [
+        {
+          message: ERROR_MESSAGE,
+          line: 1,
+          column: 46,
           type: "Identifier"
         }
       ]
@@ -42,7 +75,7 @@ ruleTester.run("only-string-literal-argument", rule, {
         {
           message: ERROR_MESSAGE,
           line: 1,
-          column: 1,
+          column: 10,
           type: "Identifier"
         }
       ]
@@ -53,7 +86,7 @@ ruleTester.run("only-string-literal-argument", rule, {
         {
           message: ERROR_MESSAGE,
           line: 1,
-          column: 1,
+          column: 27,
           type: "Identifier"
         }
       ]
