@@ -41,7 +41,8 @@ ruleTester.run("no-invalid-identifier-in-prop-value", rule, {
       `,
       errors: [
         {
-          message: "template literal could not have an expression in i18n_default_text prop value",
+          message:
+            "template literal could not have an expression in i18n_default_text prop value",
           line: 3,
           column: 38,
           type: "TemplateLiteral",
@@ -52,7 +53,8 @@ ruleTester.run("no-invalid-identifier-in-prop-value", rule, {
       code: `<Localize i18n_default_text="You cannot use your real money account {{website_name}} with at this time." />`,
       errors: [
         {
-          message: "values prop must have properties (website_name) defined in string literal",
+          message:
+            "values prop must have properties (website_name) defined in string literal",
           line: 1,
           column: 2,
           type: "JSXIdentifier",
@@ -63,7 +65,8 @@ ruleTester.run("no-invalid-identifier-in-prop-value", rule, {
       code: `<Localize i18n_default_text="You cannot use your real money account {{variable_name}} with at this time." />`,
       errors: [
         {
-          message: "values prop must have properties (variable_name) defined in string literal",
+          message:
+            "values prop must have properties (variable_name) defined in string literal",
           line: 1,
           column: 2,
           type: "JSXIdentifier",
@@ -79,7 +82,25 @@ ruleTester.run("no-invalid-identifier-in-prop-value", rule, {
       `,
       errors: [
         {
-          message: "someOtherKey is not required for the i18_default_text string literal",
+          message:
+            "values prop must have properties (website_name) defined in string literal",
+          line: 4,
+          column: 13,
+          type: "JSXAttribute",
+        },
+      ],
+    },
+    {
+      code: `
+        <Localize
+            i18n_default_text="You cannot use your real money account {{website_name}} with at this time."
+            values={{ someOtherKey: website_name, website_name }}
+        />;
+      `,
+      errors: [
+        {
+          message:
+            "someOtherKey is not required for the i18_default_text string literal",
           line: 4,
           column: 23,
           type: "Property",
@@ -89,16 +110,34 @@ ruleTester.run("no-invalid-identifier-in-prop-value", rule, {
     {
       code: `
         <Localize
-            i18n_default_text="You cannot use your real money account {{variable_name}} with at this time."
+            i18n_default_text="You cannot use your {{website_name}} real money account {{variable_name}} with at this time."
             values={{ website_name }}
         />;
       `,
       errors: [
         {
-          message: 'website_name is not required for the i18_default_text string literal',
+          message:
+            "values prop must have properties (variable_name) defined in string literal",
           line: 4,
-          column: 23,
-          type: "Property",
+          column: 13,
+          type: "JSXAttribute",
+        },
+      ],
+    },
+    {
+      code: `
+        <Localize
+            i18n_default_text="You cannot {{some_other_variable}} use your real {{some_other_variable}} money account {{variable_name}} with at this time."
+            values={{ variable_name }}
+        />;
+      `,
+      errors: [
+        {
+          message:
+            "values prop must have properties (some_other_variable) defined in string literal",
+          line: 4,
+          column: 13,
+          type: "JSXAttribute",
         },
       ],
     },
