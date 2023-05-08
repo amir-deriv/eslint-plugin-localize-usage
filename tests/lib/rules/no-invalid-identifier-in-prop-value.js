@@ -13,8 +13,6 @@ const parsers = require("../../helpers/parsers");
 
 const ERROR_MESSAGE = "Identifier value is not passed in values";
 
-const mock_value = "mock_value";
-
 const ruleTester = new RuleTester({ parser: parsers.BABEL_ESLINT });
 ruleTester.run("no-invalid-identifier-in-prop-value", rule, {
   valid: [
@@ -39,12 +37,15 @@ ruleTester.run("no-invalid-identifier-in-prop-value", rule, {
 
   invalid: [
     {
-      code: `<Localize i18n_default_text={\`You cannot use your real money account ${mock_value} with at this time.\`} />`,
+      code: `
+        const mock_value = "mock_value";
+        <Localize i18n_default_text={\`You cannot use your real money account \$\{mock_value\} with at this time.\`} />
+      `,
       errors: [
         {
           message: ERROR_MESSAGE,
-          line: 1,
-          column: 2,
+          line: 3,
+          column: 10,
           type: "JSXIdentifier",
         },
       ],
