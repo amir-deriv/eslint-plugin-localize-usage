@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-localize-usage",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "ESLint rules for enforcing best the usage of localize function and component",
   "keywords": [
     "eslint",
