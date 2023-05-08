@@ -62,6 +62,22 @@ ruleTester.run("no-invalid-identifier-in-prop-value", rule, {
       ],
     },
     {
+      code: `
+        <Localize
+          i18n_default_text="You cannot {{new_name}} use your real money account {{new_name}} with {{website_name}} at this time."
+        />
+      `,
+      errors: [
+        {
+          message:
+            "values prop must have properties (new_name, website_name) defined in string literal",
+          line: 2,
+          column: 10,
+          type: "JSXIdentifier",
+        },
+      ],
+    },
+    {
       code: `<Localize i18n_default_text="You cannot use your real money account {{variable_name}} with at this time." />`,
       errors: [
         {
