@@ -11,8 +11,6 @@ const parsers = require("../../helpers/parsers");
 // Tests
 //------------------------------------------------------------------------------
 
-const ERROR_MESSAGE = "Identifier value is not passed in values";
-
 const ruleTester = new RuleTester({ parser: parsers.BABEL_ESLINT });
 ruleTester.run("no-invalid-identifier-in-prop-value", rule, {
   valid: [
@@ -43,10 +41,10 @@ ruleTester.run("no-invalid-identifier-in-prop-value", rule, {
       `,
       errors: [
         {
-          message: ERROR_MESSAGE,
+          message: "template literal could not have an expression in i18n_default_text prop value",
           line: 3,
-          column: 10,
-          type: "JSXIdentifier",
+          column: 38,
+          type: "TemplateLiteral",
         },
       ],
     },
@@ -54,7 +52,7 @@ ruleTester.run("no-invalid-identifier-in-prop-value", rule, {
       code: `<Localize i18n_default_text="You cannot use your real money account {{website_name}} with at this time." />`,
       errors: [
         {
-          message: ERROR_MESSAGE,
+          message: "values prop must have properties (website_name) defined in string literal",
           line: 1,
           column: 2,
           type: "JSXIdentifier",
@@ -65,7 +63,7 @@ ruleTester.run("no-invalid-identifier-in-prop-value", rule, {
       code: `<Localize i18n_default_text="You cannot use your real money account {{variable_name}} with at this time." />`,
       errors: [
         {
-          message: ERROR_MESSAGE,
+          message: "values prop must have properties (variable_name) defined in string literal",
           line: 1,
           column: 2,
           type: "JSXIdentifier",
@@ -81,10 +79,10 @@ ruleTester.run("no-invalid-identifier-in-prop-value", rule, {
       `,
       errors: [
         {
-          message: ERROR_MESSAGE,
-          line: 2,
-          column: 10,
-          type: "JSXIdentifier",
+          message: "someOtherKey is not required for the i18_default_text string literal",
+          line: 4,
+          column: 23,
+          type: "Property",
         },
       ],
     },
@@ -97,10 +95,10 @@ ruleTester.run("no-invalid-identifier-in-prop-value", rule, {
       `,
       errors: [
         {
-          message: ERROR_MESSAGE,
-          line: 2,
-          column: 10,
-          type: "JSXIdentifier",
+          message: 'website_name is not required for the i18_default_text string literal',
+          line: 4,
+          column: 23,
+          type: "Property",
         },
       ],
     },
