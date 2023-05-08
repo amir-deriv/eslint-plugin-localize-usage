@@ -44,8 +44,8 @@ ruleTester.run("no-invalid-identifier-in-prop-value", rule, {
           message:
             "template literal could not have an expression in i18n_default_text prop value",
           line: 3,
-          column: 38,
-          type: "TemplateLiteral",
+          column: 80,
+          type: "Identifier",
         },
       ],
     },
