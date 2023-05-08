@@ -15,6 +15,9 @@ Examples of **incorrect** code for this rule:
   i18n_default_text="You cannot use your real money account {{variable_name}} with at this time."
   values={{ website_name }}
 />;
+
+const mock_value = "mock_value";
+<Localize i18n_default_text={`You cannot use your real money account ${mock_value} with at this time.`} />
 ```
 
 Examples of **correct** code for this rule:
