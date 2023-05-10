@@ -11,7 +11,7 @@ const parsers = require("../../helpers/parsers");
 // Tests
 //------------------------------------------------------------------------------
 
-const ERROR_MESSAGE = "You can only use string literals with localise function";
+const ERROR_MESSAGE = "localize function only accepts 1 string literal argument";
 
 const ruleTester = new RuleTester({ parser: parsers.BABEL_ESLINT });
 ruleTester.run("only-string-literal-argument", rule, {
@@ -19,12 +19,20 @@ ruleTester.run("only-string-literal-argument", rule, {
     {
       code: "localize('this is my translation key')"
     },
-    {
-      code: "localize(`this is my translation key with template literals`)"
-    },
   ],
 
   invalid: [
+    {
+      code: "localize(`this is my translation key with template literals`)",
+      errors: [
+        {
+          message: ERROR_MESSAGE,
+          line: 1,
+          column: 10,
+          type: "TemplateLiteral"
+        }
+      ]
+    },
     {
       code: "localize('invalid use', some_variable)",
       errors: [
@@ -33,6 +41,17 @@ ruleTester.run("only-string-literal-argument", rule, {
           line: 1,
           column: 25,
           type: "Identifier"
+        }
+      ]
+    },
+    {
+      code: "localize('some test string', { mock_value })",
+      errors: [
+        {
+          message: ERROR_MESSAGE,
+          line: 1,
+          column: 30,
+          type: "ObjectExpression"
         }
       ]
     },
@@ -86,8 +105,8 @@ ruleTester.run("only-string-literal-argument", rule, {
         {
           message: ERROR_MESSAGE,
           line: 1,
-          column: 27,
-          type: "Identifier"
+          column: 10,
+          type: "TemplateLiteral"
         }
       ]
     },
